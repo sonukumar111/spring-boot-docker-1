@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.4.3</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.test</groupId>
+	<artifactId>spring-boot-docker-1</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>spring-boot-docker-1</name>
+	<description>Spring boot application docker test application</description>
+	<url/>
+	<licenses>
+		<license/>
+	</licenses>
+	<developers>
+		<developer/>
+	</developers>
+	<scm>
+		<connection/>
+		<developerConnection/>
+		<tag/>
+		<url/>
+	</scm>
+	<properties>
+		<java.version>17</java.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<!--<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			Maven pluggins for create docker image
+			<plugin>
+            <groupId>com.google.cloud.tools</groupId>
+            <artifactId>jib-maven-plugin</artifactId>
+            <version>3.4.0</version>   Latest stable version 
+            <configuration>
+                <from>
+                    <image>openjdk:17-jdk</image>   Java 17 as per your setup 
+                </from>
+                <to>
+                    <image>mvn-plugging-boot-docker-img</image>   Local Docker image name 
+                </to>
+                <container>
+                    <ports>
+                        <port>8081</port>   Your Spring Boot app port 
+                    </ports>
+                    <creationTime>USE_CURRENT_TIMESTAMP</creationTime>
+                </container>
+            </configuration>
+        </plugin>
+		</plugins>
+		<finalName>mvn-boot-docker</finalName>
+	</build>-->
+	<build>
+    <plugins>
+        <plugin>
+            <groupId>com.google.cloud.tools</groupId>
+            <artifactId>jib-maven-plugin</artifactId>
+            <version>3.3.2</version>
+
+            <!--<executions>
+                <execution>
+                    <id>dockerBuild</id>
+                    <phase>install</phase>
+                    <goals>
+                        <goal>dockerBuild</goal>
+                    </goals>
+                </execution>
+
+                <execution>
+                    <id>dockerPush</id>
+                    <phase>install</phase>
+                    <goals>
+                        <goal>build</goal>
+                    </goals>
+                </execution>
+            </executions>
+
+            <configuration>
+                 Docker Hub Repository 
+                <to>
+                    <image>sonukumardocker/boot-app-maven-image</image>
+                </to>
+
+                <from>
+                    <image>openjdk:17-jdk-slim</image>
+                </from>
+
+                <container>
+                    <ports>
+                        <port>8081</port>
+                    </ports>
+                    <creationTime>USE_CURRENT_TIMESTAMP</creationTime>
+                </container>
+            </configuration>-->
+        </plugin>
+    </plugins>
+
+    <finalName>boot-git-to-jenkins-docker-image</finalName>
+</build>
+
+
+
+</project>
