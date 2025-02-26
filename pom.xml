@@ -118,7 +118,4 @@
 
     <finalName>boot-git-to-jenkins-docker-image</finalName>
 </build>
-
-
-
 </project>
